@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "snippets",
+  "info": {
+    "name": "snippet"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "categories": {
+      "via": "snippets",
+      "collection": "category"
+    }
+  }
+}
