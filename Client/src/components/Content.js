@@ -22,7 +22,9 @@ const Content = () => {
         {snippets.map((snips) => (
           <div className="card mb-3" key={snips.id}>
             <h5 className="card-header bg-dark text-light">{snips.title}</h5>
-            <pre className="card-body card-text">{snips.content}</pre>
+            <code className="card-body card-text">
+              <pre>{snips.content}</pre>
+            </code>
           </div>
         ))}
       </ul>

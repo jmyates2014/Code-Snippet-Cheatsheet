@@ -22,7 +22,7 @@ const Filter = () => {
   // TODO - add filtering functionality to the buttons for the categories and the display
 
   return (
-    <div className="container text-center py-3">
+    <div className="container text-center py-3 mb-5">
       {categories.map((item) => (
         <button className="btn btn-warning m-2" key={item.id}>
           {item.name}
