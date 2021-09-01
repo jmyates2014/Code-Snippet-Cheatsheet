@@ -17,6 +17,8 @@ const Filter = () => {
 
   useEffect(() => getCategories(), []);
 
+  // TODO - add filtering functionality to the buttons for the categories and the display
+
   return (
     <div className="container text-center py-3">
       {categories.map((cats) => (
