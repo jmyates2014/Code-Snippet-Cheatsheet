@@ -18,14 +18,12 @@ const Filter = () => {
   useEffect(() => getCategories(), []);
 
   return (
-    <div id="catList">
-      <ul>
-        {categories.map((cats) => (
-          <li key={cats.id}>
-            <div>{cats.name}</div>
-          </li>
-        ))}
-      </ul>
+    <div className="container text-center py-3">
+      {categories.map((cats) => (
+        <button className="btn btn-warning m-2" key={cats.id}>
+          {cats.name}
+        </button>
+      ))}
     </div>
   );
 };
