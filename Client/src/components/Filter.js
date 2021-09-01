@@ -8,11 +8,13 @@ const Filter = () => {
 
   // Make the API Call and get the list of categories
   const getCategories = () => {
-    axios.get("http://localhost:1337/categories").then((response) => {
-      console.log(response);
-      const allCategories = response.data;
-      setCategories(allCategories);
-    });
+    axios
+      .get("http://localhost:1337/categories?snippets_null=false")
+      .then((response) => {
+        console.log(response);
+        const allCategories = response.data;
+        setCategories(allCategories);
+      });
   };
 
   useEffect(() => getCategories(), []);
@@ -21,9 +23,9 @@ const Filter = () => {
 
   return (
     <div className="container text-center py-3">
-      {categories.map((cats) => (
-        <button className="btn btn-warning m-2" key={cats.id}>
-          {cats.name}
+      {categories.map((item) => (
+        <button className="btn btn-warning m-2" key={item.id}>
+          {item.name}
         </button>
       ))}
     </div>
