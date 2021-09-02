@@ -1,6 +1,3 @@
-//Imports
-
-// Content Logic
 const Footer = () => {
   return (
     <div className="bg-dark text-light fixed-bottom text-center py-3">
