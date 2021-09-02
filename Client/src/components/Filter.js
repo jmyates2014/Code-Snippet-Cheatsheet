@@ -4,28 +4,27 @@ import { useState, useEffect } from "react";
 // Get and Render the list of Categories
 const Filter = () => {
   // Set the state
-  const [categories, setCategories] = useState([]);
+  const [snippets, setSnippets] = useState([]);
 
-  // Make the API Call and get the list of categories
-  const getCategories = () => {
+  // Get snippets
+  const getSnippets = () => {
     axios
-      .get("http://localhost:1337/categories?snippets_null=false")
+      .get("http://localhost:1337/snippets?language_null=false")
       .then((response) => {
         console.log(response);
-        const allCategories = response.data;
-        setCategories(allCategories);
+        const allSnippets = response.data;
+        setSnippets(allSnippets);
       });
   };
-
-  useEffect(() => getCategories(), []);
+  useEffect(() => getSnippets(), []);
 
   // TODO - add filtering functionality to the buttons for the categories and the display
 
   return (
     <div className="container text-center py-3 mb-5">
-      {categories.map((item) => (
-        <button className="btn btn-warning m-2" key={item.id}>
-          {item.name}
+      {snippets.map((snpItem) => (
+        <button className="btn btn-warning m-2" key={snpItem.id}>
+          {snpItem.language}
         </button>
       ))}
     </div>

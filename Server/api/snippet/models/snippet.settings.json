@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "snippets",
   "info": {
-    "name": "snippet"
+    "name": "snippet",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -17,9 +18,14 @@
     "content": {
       "type": "richtext"
     },
-    "categories": {
-      "via": "snippets",
-      "collection": "category"
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "HTML",
+        "React",
+        "JavaScript",
+        "NodeJS"
+      ]
     }
   }
 }
