@@ -17,8 +17,8 @@ const Content = () => {
   useEffect(() => getSnippets(), []);
 
   return (
-    <div className="container">
-      <ul className="">
+    <div className="snippets-list">
+      <ul className="container">
         {snippets.map((snips) => (
           <div className="card mb-3" key={snips.id}>
             <h5 className="card-header bg-dark text-light">{snips.title}</h5>

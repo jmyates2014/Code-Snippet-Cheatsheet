@@ -6,7 +6,7 @@ const Filter = () => {
   // Set the state
   const [snippets, setSnippets] = useState([]);
 
-  // Get snippets
+  // Get snippets with Axios
   const getSnippets = () => {
     axios
       .get("http://localhost:1337/snippets?language_null=false")
@@ -21,7 +21,8 @@ const Filter = () => {
   // TODO - add filtering functionality to the buttons for the categories and the display
 
   return (
-    <div className="container text-center py-3 mb-5">
+    <div className="container text-center py-3 mt-1">
+      <button className="btn btn-warning m-2">All</button>
       {snippets.map((snpItem) => (
         <button className="btn btn-warning m-2" key={snpItem.id}>
           {snpItem.language}
